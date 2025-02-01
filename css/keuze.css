@@ -31,12 +31,14 @@ section {
     position: absolute;
     width: 40%;
     left: 45px;
+    padding-top: 20px; 
 }
 
 #rechts {
     position: absolute;
     width: 40%;
     right: 45px;
+    padding-top: 20px; 
 }
 
 .button {
