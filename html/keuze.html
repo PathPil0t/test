@@ -1,42 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/keuze.css">
-  </head>
-  <body>
+<head>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/keuze.css">
+  <script src="../js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1 id="titel">De app voor uw hardloop- en fietsroutes</h1>
+  </header>
 
-    <header><h1 id="titel">
-      De app voor uw hardloop- en fietsroutes
-    </h1>
-   
-    </header>
- 
-    <div id="links">
+  <div id="links">
     <section>
-     
-      <img src= "../jpg/fiets.jpg" width="100%">
-     
-           <h2>
-            <a href="fiets.html" class="link button">FIETSROUTES</a>
-           </h2>
-        </section>
-    </div>
-       
-        <div id="rechts">
-        <section>
-       
-          <img src="../jpg/hardlopen.jpg" width="200%">
-       
-          <h2>
-           <a href="loop.html" class="link button">HARDLOOPROUTES </a>
-          </h2>
-        </section>
-        </div>
-       
-   
-   
-  </body>
+      <img src="../jpg/fiets.jpg" width="100%">
+      <h2>
+        <a href="#" class="link button" onclick="selectRoute('fiets')">FIETSROUTES</a>
+      </h2>
+    </section>
+  </div>
+
+  <div id="rechts">
+    <section>
+      <img src="../jpg/hardlopen.jpg" width="200%">
+      <h2>
+        <a href="#" class="link button" onclick="selectRoute('loop')">HARDLOOPROUTES</a>
+      </h2>
+    </section>
+  </div>
+</body>
 </html>
-
-
