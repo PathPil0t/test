@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps with Route</title>
+</head>
+<body>
+    <h1>Route Weergave</h1>
+    <div id="map" style="height: 400px; width: 100%;"></div>
+
+    <script>
+        function initMap() {
+            // Locaties voor de route
+            const start = { lat: 52.0870, lng: 4.8836 }; // Woerden
+            const end = { lat: 52.0895, lng: 4.8970 }; // Andere locatie, bijvoorbeeld Utrecht
+
+            // Maak de kaart aan
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 13,
+                center: start,
+            });
+
+            // Maak een DirectionsService object aan om de route te berekenen
+            const directionsService = new google.maps.DirectionsService();
+
+            // Maak een DirectionsRenderer object aan om de route op de kaart weer te geven
+            const directionsRenderer = new google.maps.DirectionsRenderer();
+            directionsRenderer.setMap(map);
+
+            // Bereken de route tussen de start- en eindlocatie
+            const request = {
+                origin: start,
+                destination: end,
+                travelMode: google.maps.TravelMode.DRIVING, // Je kunt ook WALKING of BICYCLING kiezen
+            };
+
+            // Vraag de route aan de DirectionsService
+            directionsService.route(request, (result, status) => {
+                if (status === google.maps.DirectionsStatus.OK) {
+                    // Als de route succesvol is, teken deze op de kaart
+                    directionsRenderer.setDirections(result);
+                } else {
+                    // Als er een fout is, geef dit weer
+                    alert("Route kan niet worden berekend: " + status);
+                }
+            });
+        }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPyblvk1xIiFLPpey-cztzxJyGG8zDeJA&callback=initMap&libraries=directions&loading=async" async defer></script>
+</body>
+</html>
