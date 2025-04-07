@@ -58,3 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 52.3676, lng: 4.9041 }, // Bijvoorbeeld: Amsterdam
+    zoom: 12,
+  });
+}
